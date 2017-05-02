@@ -1,0 +1,85 @@
+//Dashboard =========================================================================
+.o_web_settings_dashboard {
+    background: transparent !important;
+    padding: 0px 5px;
+    .o_web_settings_dashboard_col {
+        padding: 0 10px !important;
+        .o_web_settings_dashboard_compact_subtitle {
+            line-height: inherit;
+        }
+        >div {
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+            -webkit-border-radius: 0 !important;
+            -moz-border-radius: 0 !important;
+            -ms-border-radius: 0 !important;
+            -o-border-radius: 0 !important;
+            border-radius: 0 !important;
+            border: 1px solid @table-border-color;
+            hr {
+                border-color: @table-border-color !important;
+            }
+        }
+    }
+}
+
+.oe_module_icon+.oe_module_desc {
+    padding-left: 90px;
+}
+
+.o_web_settings_dashboard {
+    .o_web_settings_dashboard_col {
+        >div {
+            padding: 16px 16px 16px 16px;
+            >i {
+                color: @color-lighter;
+                width: 20%;
+                text-align: left;
+                font-size: 3em;
+            }
+        }
+        .o_web_settings_dashboard_header{
+            width: 80%;
+            display: inline-block;
+            float: right;
+
+            &+div{
+                clear: both;
+                margin-top: 10px;
+            }
+        }
+        .o_web_settings_dashboard_pills {
+            >a {
+                display: block;
+                float: none !important;
+            }
+        }
+        .o_web_settings_dashboard_invitations {
+            .o_web_settings_dashboard_invitation_form {
+                textarea {
+                    margin-top: 10px;
+                    height: auto;
+                }
+            }
+        }
+        .o_web_settings_dashboard_planner {
+            .progress {
+                background-color: @bg-f5 !important;
+                height: 4px !important;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+            }
+            .o_web_settings_dashboard_planner_progress_text {
+                color: @theme-primary;
+            }
+        }
+        .o_web_settings_dashboard_progress_title {
+            color: @color-lightest !important;
+            font-size: 11px;
+            font-weight: 600 !important;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+    }
+}

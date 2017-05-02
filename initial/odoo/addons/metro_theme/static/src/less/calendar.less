@@ -1,0 +1,177 @@
+.o_web_client {
+    .o_calendar_container {
+        padding: 0;
+        .o_calendar_sidebar_container {
+            // .o_calendar_sidebar_toggler{
+            //     left: 0;
+            //     &:before{
+            //         content: "\f054";
+            //     }
+            // }
+            .o_calendar_filter {
+                padding: 6px 0;
+                border: 0;
+                .o_calendar_contacts {}
+            }
+            .o_calendar_mini {}
+            .o_calendar_sidebar {
+                width: 300px;
+                padding-left: 20px;
+            }
+            .ui-widget-header {
+                border: none;
+            }
+            .o_calendar_sidebar_toggler {
+                font-weight: 400;
+                color: @gray;
+            }
+            .ui-datepicker {
+                font-size: 12px;
+                .ui-widget-header {
+                    .ui-datepicker-title {
+                        font-size: 14px;
+                        order: 1;
+                    }
+                    .ui-datepicker-prev {
+                        order: 2;
+                    }
+                    .ui-datepicker-next {
+                        order: 3;
+                    }
+                    .ui-datepicker-prev:after {
+                        content: "\f077";
+                        font-weight: 400;
+                        color: @gray;
+                    }
+                    .ui-datepicker-next:before {
+                        content: "\f078";
+                        font-weight: 400;
+                        color: @gray;
+                    }
+                }
+                .ui-datepicker-title {
+                    font-weight: normal;
+                }
+                table {
+                    th {
+                        text-transform: uppercase;
+                        color: @color-dark;
+                        font-weight: normal;
+                    }
+                    .ui-state-active {
+                        background: @theme-primary !important;
+                        color: #fff !important;
+                    }
+                    .ui-state-default {
+                        color: @gray;
+                        border: none;
+                        &:hover {
+                            background: @bg-light;
+                            color: @gray;
+                        }
+                    }
+                }
+            }
+        }
+        .o_calendar_view .o_calendar_widget {
+            .fc-widget-header,
+            .fc-widget-content {
+                border-color: @table-border-color;
+            }
+            thead>tr>th {
+                border-color: @table-border-color;
+                border-left-color: #dfdfdf;
+                font-size: 14px;
+                font-weight: 500;
+            }
+            .fc-week-number,
+            .fc-widget-header {
+                background-color: #F1F4F7;
+                padding: 6px;
+                color: @color-dark;
+            }
+        }
+    }
+}
+
+.o_form_view {
+    .o_form_field_many2manytags {
+        .o_form_input_dropdown {
+            .ui-autocomplete-input {
+                height: 28px;
+            }
+            .o_dropdown_button {
+                top: 2px;
+                right: 4px;
+            }
+        }
+    }
+    .o_form_input_dropdown {
+        .o_dropdown_button {
+            top: 5px;
+            right: 10px;
+        }
+    }
+    .o_datepicker .o_datepicker_button {
+        top: 7px;
+        right: 10px;
+    }
+    .o_form_sheet {
+        .o_form_label {
+            margin-bottom: 5px;
+        }
+    }
+    h1,
+    h2 {
+        font-size: inherit;
+    }
+    .o_form_field{
+        margin-bottom: 15px;
+    }
+    .o_form_sheet_bg {
+        .o_form_field_many2manytags {
+            padding: 2px 4px;
+            border-color: @input-border-color;
+            .o_tag_color_0 {
+                background-color: #4d4d4d;
+            }
+            .o_tag_color_1 {
+                background-color: #61bd4f;
+            }
+            .o_tag_color_2 {
+                background-color: #f2d600;
+            }
+            .o_tag_color_3 {
+                background-color: #ffab4a;
+            }
+            .o_tag_color_4 {
+                background-color: #eb5a46;
+            }
+            .o_tag_color_5 {
+                background-color: #875a7b;
+            }
+            .o_tag_color_6 {
+                background-color: #0079bf;
+            }
+            .o_tag_color_7 {
+                background-color: #00c2e0;
+            }
+            .o_tag_color_8 {
+                background-color: #4cd98e;
+            }
+            .o_tag_color_9 {
+                background-color: #ff80ce;
+            }
+            .o_tag_color_10 {
+                background-color: @gray-lighter;
+            }
+            .badge {
+                margin: 0 5px 0 0;
+                padding: 2px 4px;
+                line-height: 20px;
+                font-size: 13px;
+                color: @gray;
+            }
+        }
+    }
+}
