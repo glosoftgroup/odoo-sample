@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-extend='UserMenu'>
+        <t t-jquery='.caret' t-operation='replace'>
+            <span class="fa fa-angle-down"></span>
+        </t>
+    </t>
+
+    <t t-extend='kanban-box'>
+        <t t-jquery='.fa-caret-down' t-operation='replace'>
+            <i class="fa fa-angle-down"></i>
+        </t>
+    </t>
+
+     <t t-extend='crm_team_salesteams_view_kanban'>
+        <t t-operation='replace'>
+            <i class="fa fa-angle-down"></i>
+        </t>
+    </t>
+</templates>
+

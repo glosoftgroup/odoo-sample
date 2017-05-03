@@ -1,0 +1,149 @@
+.o_web_client>.o_main .o_main_content .o_content {
+    background-color: @bg-primary;
+}
+
+.o_kanban_view.o_kanban_dashboard.o_kanban_ungrouped a,
+.o_kanban_view.o_kanban_dashboard.o_kanban_grouped a,
+.o_kanban_view.o_kanban_dashboard.o_kanban_ungrouped span,
+.o_kanban_view.o_kanban_dashboard.o_kanban_grouped span {
+    text-align: right;
+}
+
+.o_view_manager_content {
+    .o_kanban_view.o_kanban_dashboard.o_salesteam_kanban {
+        .o_sales_dashboard {
+            background-color: transparent;
+            padding: 10px 12px;
+            margin: -4px -6px 4px !important;
+            &>div>table {
+                border-spacing: 5px 0px;
+                >tbody>tr>td {
+                    border-top-color: @bg-primary;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    .o_main {
+                        background-color: lighten(@theme-primary, 15%) !important;
+                    }
+                }
+            }
+        }
+    }
+    .o_kanban_view {
+        .o_column_quick_create {
+            background-color: @bg-dark;
+        }
+        .o_kanban_group {
+            background-color: @bg-lightest;
+            &:nth-child(odd) {
+                background-color: @bg-dark;
+            }
+            .o_kanban_record {
+                -webkit-box-shadow: none;
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+.o_kanban_view.o_kanban_grouped {
+    padding: 0;
+}
+
+.o_kanban_view.o_opportunity_kanban {
+    .o_kanban_group {
+        .o_kanban_header {
+            margin-bottom: 4px;
+        }
+    }
+}
+
+.o_kanban_view.o_kanban_ungrouped {
+    .o_kanban_record {
+        border: 1px solid @table-border-color;
+        .o_kanban_card_header {
+            background-color: #fff !important;
+        }
+        .o_kanban_card_header_title {
+            padding: 16px !important;
+            -webkit-flex: 4 0 0px !important;
+            -moz-flex: 4 0 0px !important;
+            -ms-flex: 4 0 0px !important;
+            -o-flex: 4 0 0px !important;
+            flex: 4 0 0px !important;
+            .o_primary {
+                color: @font-dark;
+                text-transform: uppercase;
+            }
+        }
+        .o_kanban_card_content {
+            border-top: 1px solid @table-border-color;
+        }
+        .o_kanban_manage_button_section {
+            .o_kanban_manage_toggle_button {
+                text-align: center !important;
+                padding: 4px 10px;
+                color: @font-dark;
+                border: 1px solid @font-dark;
+                -webkit-border-radius: 15px;
+                -moz-border-radius: 15px;
+                -ms-border-radius: 15px;
+                -o-border-radius: 15px;
+                border-radius: 15px;
+                i {
+                    &:before {
+                        content: "\f107";
+                    }
+                }
+            }
+        }
+    }
+    .oe_kanban_details {
+        .o_text_overflow {
+            color: lighten(@theme-dark, 50%);
+        }
+        .badge {
+            background-color: transparent;
+            font-weight: normal;
+            font-size: 14px;
+            color: @gray;
+            padding: 0;
+            line-height: 18px;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            -ms-border-radius: 0;
+            -o-border-radius: 0;
+            border-radius: 0;
+            i {
+                line-height: 14px;
+            }
+        }
+    }
+}
+
+.o_pivot.o_enable_linking {
+    .o_pivot_cell_value {
+        &:hover {
+            color: @brand-primary;
+        }
+    }
+}
+
+.o_kanban_view.o_opportunity_kanban {
+    .o_kanban_quick_create {
+        padding: 8px;
+        input {
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.o_form_view {
+    .o_form_field.o_form_field_many2one .o_external_button {
+        background-color: transparent;
+        color: @theme-primary;
+        margin-left: 5px;
+        &:hover {
+            color: darken(@theme-primary, 5%);
+        }
+    }
+}

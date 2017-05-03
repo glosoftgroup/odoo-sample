@@ -1,0 +1,44 @@
+//Dashboard
+.o_kanban_view.o_kanban_dashboard.o_project_kanban {
+    a:hover{
+        color: inherit;
+    }
+    .o_kanban_record {
+        .o_kanban_card_content {
+            border: none;
+        }
+    }
+    .o_project_kanban_main {
+        .o_project_kanban_manage .o_kanban_manage_toggle_button {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: @gray-light;
+        }
+        .o_kanban_card_content {
+            .o_primary {
+                span {
+                    text-align: left;
+                }
+            }
+        }
+    }
+    .o_project_kanban_boxes {
+        .o_project_kanban_box {
+            padding: 15px !important;
+            font-weight: 300;
+            &:nth-child(odd) {
+                background-color: @theme-primary !important;
+            }
+            .o_value {
+                font-size: 34px;
+                text-align: right;
+                line-height: 36px;
+                letter-spacing: -1px;
+            }
+            .o_label {
+                font-size: 16px;
+            }
+        }
+    }
+}
