@@ -20,17 +20,7 @@
     <template name="Home page" id="website.home" page="True">
       <t t-call="website.layout">
        <div id="wrap">
-         Hello
-       </div>
-      </t>
-    </template>
-    <!-- === End Home Page === -->
-
-    <!-- === Services Page === -->
-    <template name="Services page" id="website.services" page="True">
-      <t t-call="website.layout">
-        <div id="wrap">
-          <!-- Home slideder-->
+         <!-- Home slideder-->
           <div id="home-slider">
               <div class="container">
                   <div class="row">
@@ -1949,6 +1939,17 @@
             <a href="#" class="scroll_top" title="Scroll to Top" style="display: inline;">Scroll</a>
             <!-- end scroll up button-->
 
+       </div>
+      </t>
+    </template>
+    <!-- === End Home Page === -->
+
+    <!-- === Services Page === -->
+    <template name="Services page" id="website.services" page="True">
+      <t t-call="website.layout">
+        <div id="wrap">
+           Hello
+          
         </div>
       </t>
     </template>

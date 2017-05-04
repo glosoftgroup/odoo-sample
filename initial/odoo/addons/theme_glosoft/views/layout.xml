@@ -22,6 +22,13 @@
 	    <script src="/theme_glosoft/static/js/site.js" type="text/javascript"></script>
 	 </xpath>
 	</template>
+
+	<!-- <template id="sub" name="Custom Submenu" inherit_id="website.submenu">
+	 <xpath expr="." position="inside">
+	    
+	 </xpath>
+	</template> -->
+
      <!-- Customize header  -->
 	<template id="custom_header" inherit_id="website.layout" name="Custom Header">
       <xpath expr="." position="inside">
@@ -64,7 +71,9 @@
 		                        
 		                    </ul>
 		                </div> -->
-
+                         <li t-if="website.user_id == user_id">
+                         	 <a t-attf-href="/web/login">Login</a>
+                         </li>
 		                <div class="divider" t-ignore="true" t-if="website.user_id != user_id"/>
                                 <div class="dropdown" t-ignore="true" t-if="website.user_id != user_id">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -86,7 +95,7 @@
 		    <!--/.top-header -->
 
 		    <!-- MAIN HEADER -->
-		    <div class="container main-header">
+		    <!-- <div class="container main-header">
 		        <div class="row">
 		            <div class="col-xs-12 col-sm-3 logo">
 		                <a href="index-2.html"><img alt="Kute Shop" src="/theme_glosoft/static/images/suz.png" /></a>
@@ -150,7 +159,7 @@
 		            </div>
 		        </div>
 		        
-		    </div>
+		    </div> -->
         <!-- END MANIN HEADER -->
         <!-- nav -->
         <div id="nav-top-menu" class="nav-top-menu">
@@ -198,12 +207,142 @@
 	                            </div>
 	                            <div id="navbar" class="navbar-collapse collapse">
 	                                <ul class="nav navbar-nav">
-	                                    <li class="active">
-	                                        <a  href="index.php">Home</a>
-	                                        
-	                                    </li>
-	                                    <li class="dropdown">
-	                                        <a href="category.html" class="dropdown-toggle" data-toggle="dropdown">Fashion</a>
+
+	                                	<t t-foreach="website.menu_id.child_id" t-as="submenu">
+		                                    <!-- <t t-call="website.submenu"/> -->
+		                                    <!-- <li t-if="not submenu.child_id" t-att-class="
+										        'active' if submenu.url and submenu.url != '/' and request.httprequest.path == submenu.url.replace('/page/website.', '/page/') else None
+										        ">
+										        <a t-att-href="(website.menu_id.child_id[0] == submenu) and '/' or submenu.url" t-ignore="true" t-att-target="'_blank' if submenu.new_window else None">
+										            <span t-field="submenu.name"/>
+										        </a>
+										    </li> -->
+
+										    <li t-if="not submenu.child_id and submenu.url == '/page/home'" t-attf-class="{{'active' if submenu.url and submenu.url != '/' and request.httprequest.path == submenu.url.replace('/page/website.', '/page/') else None}}">
+		                                        <a t-attf-href="/">Home</a> 
+		                                    </li>
+
+
+										    <li t-if="not submenu.child_id and submenu.url == '/shop'" t-attf-class="dropdown {{'active' if submenu.url and submenu.url != '/' and request.httprequest.path == submenu.url.replace('/page/website.', '/page/') else None}}">
+										    	<a class="dropdown-toggle" data-toggle="dropdown" t-attf-href="/shop">
+										        	My Shop
+										           
+										        </a>
+										        <ul class="dropdown-menu mega_dropdown" role="menu" style="width: 830px;">
+		                                            <li class="block-container col-sm-3">
+		                                                <ul class="block">
+		                                                    <li class="img_container">
+		                                                        <a href="#">
+		                                                            <img class="img-responsive" src="/theme_glosoft/static/data/men.png" alt="sport"/>
+		                                                        </a>
+		                                                    </li>
+		                                                    <li class="link_container group_header">
+		                                                        <a href="#">MEN'S</a>
+		                                                    </li>
+		                                                    <li class="link_container"><a href="#">Skirts</a></li>
+		                                                    <li class="link_container"><a href="#">Jackets</a></li>
+		                                                    <li class="link_container"><a href="#">Tops</a></li>
+		                                                    <li class="link_container"><a href="#">Scarves</a></li>
+		                                                    <li class="link_container"><a href="#">Pants</a></li>
+		                                                </ul>
+		                                            </li>
+		                                             <li class="block-container col-sm-3">
+		                                                <ul class="block">
+		                                                    <li class="img_container">
+		                                                        <a href="#">
+		                                                            <img class="img-responsive" src="/theme_glosoft/static/data/women.png" alt="sport"/>
+		                                                        </a>
+		                                                    </li>
+		                                                    <li class="link_container group_header">
+		                                                        <a href="#">WOMEN'S</a>
+		                                                    </li>
+		                                                    <li class="link_container"><a href="#">Skirts</a></li>
+		                                                    <li class="link_container"><a href="#">Jackets</a></li>
+		                                                    <li class="link_container"><a href="#">Tops</a></li>
+		                                                    <li class="link_container"><a href="#">Scarves</a></li>
+		                                                    <li class="link_container"><a href="#">Pants</a></li>
+		                                                </ul>
+		                                            </li>
+		                                             <li class="block-container col-sm-3">
+		                                                <ul class="block">
+		                                                    <li class="img_container">
+		                                                        <a href="#">
+		                                                            <img class="img-responsive" src="/theme_glosoft/static/data/kid.png" alt="sport"/>
+		                                                        </a>
+		                                                    </li>
+		                                                    <li class="link_container group_header">
+		                                                        <a href="#">Kids</a>
+		                                                    </li>
+		                                                    <li class="link_container"><a href="#">Shoes</a></li>
+		                                                    <li class="link_container"><a href="#">Clothing</a></li>
+		                                                    <li class="link_container"><a href="#">Tops</a></li>
+		                                                    <li class="link_container"><a href="#">Scarves</a></li>
+		                                                    <li class="link_container"><a href="#">Accessories</a></li>
+		                                                </ul>
+		                                            </li>
+		                                             <li class="block-container col-sm-3">
+		                                                <ul class="block">
+		                                                    <li class="img_container">
+		                                                        <a href="#">
+		                                                            <img class="img-responsive" src="/theme_glosoft/static/data/trending.png" alt="sport"/>
+		                                                        </a>
+		                                                    </li>
+		                                                    <li class="link_container group_header">
+		                                                        <a href="#">TRENDING</a>
+		                                                    </li>
+		                                                    <li class="link_container"><a href="#">Men's Clothing</a></li>
+		                                                    <li class="link_container"><a href="#">Kid's Clothing</a></li>
+		                                                    <li class="link_container"><a href="#">Women's Clothing</a></li>
+		                                                    <li class="link_container"><a href="#">Accessories</a></li>
+		                                                </ul>
+		                                            </li>
+		                                        </ul>
+										    </li>
+
+										    <li t-if="not submenu.child_id and submenu.url == '/page/services'" t-attf-class="{{'active' if submenu.url and submenu.url != '/' and request.httprequest.path == submenu.url.replace('/page/website.', '/page/') else None}}">
+										    	<a  t-attf-href="/page/services">
+										        	Services
+										           
+										        </a>
+										    </li>
+
+										    <li t-if="not submenu.child_id and submenu.url == '/page/contactus'" t-attf-class="dropdown {{'active' if submenu.url and submenu.url != '/' and request.httprequest.path == submenu.url.replace('/page/website.', '/page/') else None}}">
+		                                        <a t-attf-href="/page/contactus" class="dropdown-toggle" data-toggle="dropdown">About Us</a>
+		                                        <ul class="dropdown-menu container-fluid">
+		                                            <li class="block-container">
+		                                                <ul class="block">
+		                                                    <li class="link_container"><a href="#">Contact</a></li>
+		                                                    
+		                                                </ul>
+		                                            </li>
+		                                        </ul> 
+		                                    </li>
+
+		                                </t>
+										
+										
+		                                    <!-- <li t-attf-class="dropdown {{'active' if submenu.url and submenu.url === '/shop') else None}} ">
+										        <a class="dropdown-toggle" data-toggle="dropdown" t-attf-href="/shop">
+										        	Second Shop
+										           
+										        </a>
+										        <ul class="dropdown-menu container-fluid" role="menu">
+										        	<li class="block-container">
+		                                                <ul class="block">
+		                                                    <li class="link_container"><a t-attf-href="page/services">My category</a></li>
+		                                                    
+		                                                </ul>
+		                                            </li>
+										        </ul>
+										    </li> -->
+										
+
+
+	                                    <!-- <li class="active">
+	                                        <a  href="index.php">Home</a>                                        
+	                                    </li> -->
+	                                    <!-- <li class="dropdown">
+	                                        <a href="category.html" class="dropdown-toggle" data-toggle="dropdown">Shop</a>
 	                                        <ul class="dropdown-menu mega_dropdown" role="menu" style="width: 830px;">
 	                                            <li class="block-container col-sm-3">
 	                                                <ul class="block">
@@ -273,37 +412,31 @@
 	                                                </ul>
 	                                            </li>
 	                                        </ul>
-	                                    </li>
+	                                    </li> -->
 	                                    
 	                                    
-	                                    <li class="dropdown">
-	                                        <a href="category.html" class="dropdown-toggle" data-toggle="dropdown">Shoes</a>
-	                                        <ul class="dropdown-menu container-fluid">
-	                                            <li class="block-container">
-	                                                <ul class="block">
-	                                                    <li class="link_container"><a href="#">Mobile</a></li>
-	                                                    <li class="link_container"><a href="#">Tablets</a></li>
-	                                                    <li class="link_container"><a href="#">Laptop</a></li>
-	                                                    <li class="link_container"><a href="#">Memory Cards</a></li>
-	                                                    <li class="link_container"><a href="#">Accessories</a></li>
-	                                                </ul>
-	                                            </li>
-	                                        </ul> 
-	                                    </li>
-	                                    <li><a href="category.html">Home and Living</a></li>
-	                                    <li><a href="category.html">Jewellery</a></li>
-	                                    
-	                                    <li class="dropdown">
+	                                    <!-- <li class="dropdown">
 	                                        <a href="category.html" class="dropdown-toggle" data-toggle="dropdown">About Us</a>
 	                                        <ul class="dropdown-menu container-fluid">
 	                                            <li class="block-container">
 	                                                <ul class="block">
-	                                                    <a href="#"><li class="link_container">Our Contacts</li></a>
+	                                                    <li class="link_container"><a href="#">Contact</a></li>
 	                                                    
 	                                                </ul>
 	                                            </li>
 	                                        </ul> 
-	                                    </li>
+	                                    </li> -->  
+
+	   									   <!-- <li t-attf-class="dropdown #{
+										         'active' if submenu.url and submenu.url != '/' and request.httprequest.path == submenu.url.replace('/page/website.', '/page/') else None
+										        }">
+												<a t-attf-href="/downloads/{{c.id}}" t-attf-class="list-group-item {{ 'active' if c.id == category_id else '' }}">
+												    <t t-esc="c.name"/>
+												</a>
+
+										   -->
+										    
+
 	                                    
 	                                </ul>
 	                            </div><!--/.nav-collapse -->
